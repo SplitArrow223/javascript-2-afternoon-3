@@ -26,9 +26,11 @@
   Write a function called first that takes in two parameters, an array and a callback function.
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
-
 // Code Here 
-
+let arr = [1,2,3];
+function first(arr, cb){
+  cb(arr[0]);
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -48,6 +50,14 @@ first(names, function(firstName){
 */
 
 //Code Here
+let array = [1,2,3,4,5];
+
+function last(array, callb){
+  let sum = array.length;
+  callb(array[sum -1]);
+}
+
+
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +76,14 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1, num2, sum){
+  let add = num1 * num2;
+  sum(add);
+}
+
+
+
+
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +103,18 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+
+function contains(arry, name, CB) {
+  for (let i = 0; i < arry.length; i++) {
+    if (arry[i] === name) {
+      CB(true);
+    }else {
+      CB(false);
+    }
+  }
+}
+
+
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -106,6 +136,19 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+function uniq(arr, cb){
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i; j < arr.length; j++){
+      if(i !== j && arr[i] === arr[j]){
+        arr.splice(j, 1);
+      }
+    }
+  }
+  cb(arr);
+}
+
+
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -124,6 +167,15 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
+function each(arr, cb) {
+  for (let i = 0; i < arr.length; i++){
+    cb(arr[i], i);
+  }
+}
+
+
+
+
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +192,17 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(users, ID, cb){
+  for (let i = 0; i < users.length; i++){
+    if (users[i].id === ID){
+      cb(users[i]);
+    }
+  }
+}
+
+
+
+
 
 // Do not edit the code below.
 var users = [
